@@ -9,38 +9,44 @@
 <body>
 
     <div class="container-sm">
-        <form action="calculo" method="post" class="form mx-auto my-4 " style="width: 500px;">
+        <form action="/ejercicio1/public/persona" method="post" class="form mx-auto my-4 " style="width: 500px;">
             <div style="background-color:#dedede" class="p-4" >
                 <h4>Informacion del cliente</h4>
+                <?php if(isset($error)):?>
+                    <div class="alert alert-warning">
+                        <p><?=$error?></p>
+                    </div>
+                <?php endif?>
                 <div>
-                    <label for="cliente">Ingrese el nombre:</label>
-                    <input type="text" name="cliente" id="cliente" class="form-control">
+                    <label for="nombre">Ingrese el nombre:</label>
+                    <input type="text" name="nombre" id="nombre" class="form-control">
                 </div>
                 <div>
-                    <label for="correo">Ingreso su nombre:</label>
+                    <label for="correo">Ingreso su correo:</label>
                     <input type="text" name="correo" id="correo" class="form-control">
                 </div>
                 <div>
                     <label for="dui">Ingrese su numero de DUI</label>
-                    <input type="text" name="DUI" id="DUI" class="form-control">
+                    <input type="text" name="dui" id="dui" class="form-control">
                 </div>
             </div>
             <div style="background-color:#dedede" class="p-4">
                 <h4>datos</h4>
                 <div>
                     <label for="capital">Ingrese el capital</label>
-                    <input type="text" name="capital" id="capital"  class="form-control">
+                    <input type="text" name="capital" id="capital"  class="form-control" required>
                 </div>
                 <div>
                     <label for="interes">Ingrese la tasa de interes</label>
-                    <input type="text" name="interes" id="interes">
+                    <input type="text" name="interes" id="interes"  class="form-control" required>
                 </div>
                 <div>
                     <label for="numero_cuotas">Ingrese el numero de cuotas</label>
-                    <input type="text" name="numero_cuotas" id="numero_cuotas">
+                    <input type="text" name="numero_cuotas" id="numero_cuotas" class="form-control" required>
                 </div>
+                <input type="submit" value="Enviar" class="btn btn-info my-2">
             </div>
-            <input type="submit" value="Enviar" class="btn btn-info">
+  
         </form>
     </div>
 
